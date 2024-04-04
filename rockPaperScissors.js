@@ -4,7 +4,6 @@ let playerChoice;
 let computerScore = 0;
 let playerScore = 0;
 let outputString = "";
-let i = 0;
 
 const playBtn = document.querySelector("button#play");
 const randomBtn = document.querySelector("button#random");
@@ -30,11 +29,12 @@ playBtn.addEventListener("click", () => {       // add listener for when user hi
 
 });
 
-for(i = 0; i < buttonChoices.length; i++){              // for each button in button container,
+for(let i = 0; i < buttonChoices.length; i++){              // for each button in button container,
     buttonChoices[i].addEventListener("click", () => {  // add a click listener & reset
         outputString = ""                               // output text and string variable so
         output.textContent = ""                         // it doesn't keep concatinating
         playRockPaperScissors(buttonChoices[i].textContent);
+        // console.log(buttonChoices[i])
     })
 }
 
